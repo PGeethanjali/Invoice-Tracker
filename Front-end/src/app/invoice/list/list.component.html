@@ -1,0 +1,25 @@
+<app-navbar></app-navbar>
+<div class="col-md-6 user-container">
+    <h2 style="margin: auto"> Invoice Details</h2>
+    <button class="btn btn-danger" style="width:100px" (click)="addinvoice()"> Add Invoice</button>
+    <table class="table table-striped">
+      <thead>
+      <tr>
+        <th class="hidden">Id</th>
+        <th>Invoice Name</th>
+        <th>Invoice Date</th>
+        <th>Invoice Price</th>
+      </tr>
+      </thead>
+      <tbody>
+      <tr *ngFor="let invoice of invoices">
+        <td class="hidden">{{invoice.invoice_id}}</td>
+        <td>{{invoice.invoice_name}}</td>
+        <td>{{invoice.invoice_date}}</td>
+        <td>{{invoice.invoice_price}}</td>
+        <td><button class="btn btn-success" (click)="deleteinvoice(invoice)"> Delete</button>
+          <button class="btn btn-success" (click)="editinvoice(invoice)" style="margin-left: 20px;"> Edit</button></td>
+      </tr>
+      </tbody>
+    </table>
+  </div>

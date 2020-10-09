@@ -1,0 +1,9 @@
+.user-container {
+    display: flex;
+    flex-direction: column;
+    margin: auto;
+    margin-top: 100px;
+  }
+  .error{
+    color: #FF0000;
+  }

@@ -1,0 +1,38 @@
+
+<div class="container">
+    
+    <div class="loginbox">
+        <div><h3>Login</h3></div>
+      <div>
+        <img class="user_img" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQkhNsPdh4teDqH7_mgSlveh0DlZkLk-fkjuFBtNLaL3_ipWdz_">
+    </div>
+  
+      <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+        
+        <div class="inputbox">
+          <input formControlName="username" id="username" name="username" type="text" class="form-input" placeholder="username" autocomplete="off" required ngModel>
+          <span><i class="fa fa-user" aria-hidden="true"></i></span>
+          <div class="error" *ngIf="loginForm.controls['username'].hasError('required') && loginForm.controls['username'].touched">Username is required</div>
+          
+        </div>
+  
+        <div class="inputbox">
+          <input formControlName="password" name="password" id="login-password" type="password" class="form-input" placeholder="Password" autocomplete="off" required ngModel>
+          <span><i class="fa fa-lock" aria-hidden="true"></i></span>
+          <div class="error" *ngIf="loginForm.controls['password'].hasError('required') && loginForm.controls['password'].touched">Password is required</div>
+        </div>
+        
+
+        <div class="inputbox">
+          <input type="submit" [disabled]="loginForm.invalid" value="Sign in">
+          
+        </div>
+       
+      </form>
+      <button type="button" class="button_signup" (click)="gotosignup()">Sign Up</button>
+      <div *ngIf="invalidLogin" class="error">
+        <div>Invalid credentials.</div>
+      
+    </div>
+  </div>
+  
