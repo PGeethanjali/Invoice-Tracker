@@ -19,8 +19,8 @@ ng serve
 ```
 ## Usage
 
-  - After successfull installation, the project runs.
-  - The first Screen is Sign In, if account doesn't exist, then Sign Up.
+  - After successful installation, the project runs.
+  - The first Screen is Sign In, if account doesn't exist, then go to Sign Up.
   ![login](/login.png)
   ![signup](/signup.png)
   - There are two roles, namely Admin and User.
