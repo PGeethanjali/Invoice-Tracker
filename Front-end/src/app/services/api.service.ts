@@ -24,7 +24,35 @@ export class ApiService {
   getlist(id: String) : Observable<ApiResponse> {
     return this.http.get<ApiResponse>(this.baseUrl+"get_list/"+id);
   }
+  getusername(id:string): Observable<ApiResponse> {
+    return this.http.get<ApiResponse>(this.baseUrl+"get_username/"+id);
+  }
+  getlistbydate(form): Observable<ApiResponse> {
+    return this.http.post<ApiResponse>(this.baseUrl+"get_list_byuser",form);
+  }
+
+  checkuser(loginPayload): Observable<ApiResponse> {
+    return this.http.post<ApiResponse>(this.baseUrl+"checkuser",loginPayload);
+  }
+
+  getuserbar(id: String) : Observable<ApiResponse> {
+    return this.http.get<ApiResponse>(this.baseUrl+"userbardata/"+id);
+  }
   
+  getadminlist() : Observable<ApiResponse> {
+    return this.http.get<ApiResponse>(this.baseUrl+"admin_list");
+  }
+
+  getadminlistbydate(form) : Observable<ApiResponse> {
+    return this.http.post<ApiResponse>(this.baseUrl+"get_list_byadmin",form);
+  }
+  
+  getadminbar1() : Observable<ApiResponse> {
+    return this.http.get<ApiResponse>(this.baseUrl+"Adminbardata1");
+  }
+  getadminbar2() : Observable<ApiResponse> {
+    return this.http.get<ApiResponse>(this.baseUrl+"Adminbardata2");
+  }
   getuserinvoice(id:String) : Observable<ApiResponse> {
     return this.http.get<ApiResponse>(this.baseUrl+"get_user_invoice/"+id);
   }

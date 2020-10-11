@@ -23,12 +23,12 @@
 </form>
 </div>
 
-  <div class="col-md-8 user-container">
+  <div class="col-md-6 user-container">
     <h2 style="margin: auto"> Invoice Details</h2>
-    <button class="btn btn-danger" style="width:110px" (click)="addinvoice()"> Add Invoice</button>
     <table class="table table-striped">
       <thead>
       <tr>
+        <th class="hidden">User Id</th>
         <th class="hidden">Invoice Id</th>
         <th>Invoice Name</th>
         <th>Invoice Date</th>
@@ -37,21 +37,22 @@
       </thead>
       <tbody>
       <tr *ngFor="let invoice of invoices">
+        <td class="hidden">{{invoice.user_id}}</td>
         <td class="hidden">{{invoice.invoice_id}}</td>
         <td>{{invoice.invoice_name}}</td>
         <td>{{invoice.invoice_date | date:'longDate':'IST'}}</td>
         <td>{{invoice.invoice_price}}</td>
-        <td><button class="btn btn-success" (click)="deleteinvoice(invoice)"> Delete</button>
-          <button class="btn btn-success" (click)="editinvoice(invoice)" style="margin-left: 20px;"> Edit</button></td>
       </tr>
       <tr class="style">
         <td></td>
         <td></td>
-        <th>Total Amount</th>
-        <th>
+        <td></td>
+        <td>Total Amount</td>
+        <td>
           {{sums}}
-        </th>
+        </td>
       </tr>
       </tbody>
     </table>
   </div>
+

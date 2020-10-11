@@ -30,7 +30,16 @@ export class SignInComponent implements OnInit {
       if(data.status === 200) {
         window.localStorage.setItem('token', data.result.token);
         window.localStorage.setItem('user_id',data.result.user_id);
-        this.router.navigate(['list'],{queryParams:data.result.user_id});
+        window.localStorage.setItem('role',data.result.role);
+        if(window.localStorage.getItem('role') == 'Admin'){
+          this.router.navigate(['adminlist']);
+        }
+        else if(window.localStorage.getItem('role') == 'User'){
+        this.router.navigate(['list']);
+        }
+        else{
+          this.router.navigate(['sign-in']);
+        }
       }else {
         this.invalidLogin = true;
         alert(data.message);

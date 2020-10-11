@@ -13,19 +13,22 @@
         <input formControlName="username" id="username" name="username" type="text" class="form-input" placeholder="Username" autocomplete="off" required ngModel>
         <span><i class="fa fa-user" aria-hidden="true"></i></span>
         <div class="error" *ngIf="signupForm.controls['username'].hasError('required') && signupForm.controls['username'].touched">Username is required</div>
-        
+        <div class="error" *ngIf="signupForm.controls['username'].hasError('minlength')">min 5 characters requires</div>
+   
       </div>
 
       <div class="inputbox">
         <input formControlName="email" name="email" id="email" type="email" class="form-input" placeholder="Email ID" autocomplete="off" required ngModel>
         <span><i class="fa fa-lock" aria-hidden="true"></i></span>
         <div class="error" *ngIf="signupForm.controls['email'].hasError('required') && signupForm.controls['email'].touched">Email ID is required</div>
+        <div class="error" *ngIf="signupForm.controls['email'].hasError('pattern') ">Email ID not valid</div>
       </div>
       
       <div class="inputbox">
         <input formControlName="password" name="password" id="login-password" type="password" class="form-input" placeholder="Password" autocomplete="off" required ngModel>
         <span><i class="fa fa-lock" aria-hidden="true"></i></span>
         <div class="error" *ngIf="signupForm.controls['password'].hasError('required') && signupForm.controls['password'].touched">Password is required</div>
+        <div class="error" *ngIf="signupForm.controls['username'].hasError('minlength') && !signupForm.controls['password'].hasError('required') ">min 5 characters requires </div>
       </div>
 
 
@@ -45,7 +48,7 @@
       </div>
        
       </form>
-     
+      <button type="button" class="button_signup" (click)="gotosignin()">Cancel</button>
       
     </div>
   </div>

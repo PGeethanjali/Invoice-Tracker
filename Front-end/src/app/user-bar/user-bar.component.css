@@ -1,0 +1,10 @@
+.chartjs-container {
+    display: block;
+    flex-direction: column;
+    margin: auto;
+    margin-top: 100px;
+    width: 600px;
+    height: 400px;
+    overflow:hidden;
+  }
+  

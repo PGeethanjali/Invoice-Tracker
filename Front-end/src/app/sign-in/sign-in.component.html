@@ -10,7 +10,7 @@
       <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
         
         <div class="inputbox">
-          <input formControlName="username" id="username" name="username" type="text" class="form-input" placeholder="username" autocomplete="off" required ngModel>
+          <input formControlName="username" id="username" name="username" type="text" class="form-input" placeholder="Username" autocomplete="off" required ngModel>
           <span><i class="fa fa-user" aria-hidden="true"></i></span>
           <div class="error" *ngIf="loginForm.controls['username'].hasError('required') && loginForm.controls['username'].touched">Username is required</div>
           

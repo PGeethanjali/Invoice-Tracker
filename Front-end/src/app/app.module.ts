@@ -16,6 +16,12 @@ import { LoginComponent } from './login/login.component';
 import { ListComponent } from './invoice/list/list.component';
 import { AddComponent } from './invoice/add/add.component';
 import { EditComponent } from './invoice/edit/edit.component';
+import { UserBarComponent } from './user-bar/user-bar.component';
+import { ChartsModule, ThemeService } from 'ng2-charts';
+import { Adminbar1Component } from './adminbar1/adminbar1.component';
+import { Adminbar2Component } from './adminbar2/adminbar2.component';
+import { AdminListComponent } from './admin-list/admin-list.component';
+import { DatePipe } from '@angular/common';
 
 @NgModule({
   declarations: [
@@ -27,7 +33,11 @@ import { EditComponent } from './invoice/edit/edit.component';
     LoginComponent,
     ListComponent,
     AddComponent,
-    EditComponent
+    EditComponent,
+    UserBarComponent,
+    Adminbar1Component,
+    Adminbar2Component,
+    AdminListComponent
   ],
   imports: [
     BrowserModule,
@@ -35,12 +45,9 @@ import { EditComponent } from './invoice/edit/edit.component';
     FormsModule,
     ReactiveFormsModule,
     HttpClientModule,
-    RouterModule.forRoot([
-      {path:  '', component : SignInComponent },
-      {path:  'home', component : HomeComponent },
-    ]),
+    ChartsModule
   ],
-  providers: [],
+  providers: [ThemeService,DatePipe],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

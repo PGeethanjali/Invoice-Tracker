@@ -14,12 +14,12 @@
         <div class="error" *ngIf="addForm.controls['invoice_date'].hasError('required') && addForm.controls['invoice_date'].touched">Date is required</div>
       </div>
       <div class="form-group">
-        <label for="invoice_price">invoice_price:</label>
-        <input type = "text" formControlName="invoice_price" placeholder="Invoice Price" name="invoice_price" class="form-control" id="invoice_price">
-        <div class="error" *ngIf="addForm.controls['invoice_price'].hasError('required') && addForm.controls['invoice_price'].touched">Price is required</div>
+        <label for="invoice_price">Invoice Amount:</label>
+        <input type = "text" formControlName="invoice_price" placeholder="Invoice Amount" name="invoice_price" class="form-control" id="invoice_price">
+        <div class="error" *ngIf="addForm.controls['invoice_price'].hasError('required') && addForm.controls['invoice_price'].touched">Amount is required</div>
+        <div class="error" *ngIf="addForm.controls['invoice_price'].hasError('pattern')">Invalid Amount</div>
       </div>
-      
-      <button class="btn btn-success">Add</button>
+      <input class="btn btn-success" style="width:70px" type="submit" [disabled]="addForm.invalid" value="Add">
       <button class="btn btn-success" (click)="gotolist();" style="margin-left: 20px;">Cancel</button>
     </form>
   </div>
